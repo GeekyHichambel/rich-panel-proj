@@ -51,7 +51,7 @@
           </label>
         </div>
         <div class="btn text-center rounded-md hover:bg-blue-600">
-          <button type="submit" class="text-white font-bold px-4 py-2">Login</button>
+          <button id="log-btn" type="submit" class="text-white font-bold px-4 py-2">Login</button>
         </div>
         <p class="text-center text-sm mt-6">
               New to MyApp? <a href="index.html" class="text-blue-600 font-semibold">Sign Up</a>
@@ -60,7 +60,7 @@
     </div>
   </div>
   <script>
-    const submit = document.getElementById('btn');
+    const submit = document.getElementById('log-btn');
     submit.addEventListener('click', () =>{
         window.location.href = 'main_page.html';
     });

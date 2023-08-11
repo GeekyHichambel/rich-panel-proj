@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            width: 100%;
+            background-color: #fff;
+        }
+        .monthly-plan {
+            color: gray;
+        }
+        .monthly-btn {
+            background-color: #1F4D91;
+        }
+        .pill-btn{
+            background-color: #1F4D91;
+            color: #fff;
+            font-weight: bold;
+        }
+        .yearly-plan {
+            color: #000;
+        }
+        .btn-triangle {
+            position: relative;
+            display: inline-block;
+            background-color: cornflowerblue;
+        }
+        .btn-triangle::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+        border-width: 0 10px 10px;
+        border-style: solid;
+        border-color: transparent transparent cornflowerblue;
+      }  
+    </style>
+</head>
+<body>
+    <div class="container mx-auto p-8">
+        <h1 class="text-center text-2xl font-bold mb-16">Choose the right plan for you</h1>
+        <table class="table-auto w-full">
+            <thead>
+                <tr>
+                    <th class="flex content-center px-8 py-12">
+                        <div class="pill-btn rounded-full py-3 px-3">
+                            <button id="monthly-btn" class="rounded-full text-s px-2 py-2 mr-2 ml-2 text-white">Monthly</button>
+                            <button id="yearly-btn" class="rounded-full text-s px-2 py-2 mr-2 ml-2 text-white">Yearly</button>
+                        </div>
+                    </th>
+                    <th class="text-xl m-2">
+                        <div class="btn-triangle">
+                            <button id="mobile-btn" class="text-center w-40 h-32 text-white">Mobile</button>
+                        </div>
+                    </th>
+                     <th class="text-xl m-2">
+                        <div class="btn-triangle">
+                            <button id="basic-btn" class="text-center w-40 h-32 text-white">Basic</button>
+                        </div> 
+                    </th>
+                    <th class="text-xl m-2">
+                        <div class="btn-triangle">
+                            <button id="standard-btn" class="text-center w-40 h-32 text-white">Standard</button>
+                        </div>    
+                    </th>
+                     <th class="text-xl m-2">
+                        <div class="btn-triangle">
+                            <button id="premium-btn" class="text-center w-40 h-32 text-white">Premium</button>
+                        </div>    
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="text-xl mt-32">
+                <tr class="content-center border-b border-gray-300">
+                    <td class="px-4 py-4 text-gray-500">Monthly price</td>
+                    <td class="px-4 py-4 monthly-plan text-center">₹ 100</td>
+                    <td class="px-4 py-4 monthly-plan text-center">₹ 200</td>
+                    <td class="px-4 py-4 monthly-plan text-center">₹ 500</td>
+                    <td class="px-4 py-4 monthly-plan text-center">₹ 700</td>
+                </tr>
+                <tr class="content-center border-b border-gray-300">
+                    <td class="px-4 py-4 text-gray-500">Video quality</td>
+                    <td class="px-4 py-4 monthly-plan text-center">Good</td>
+                    <td class="px-4 py-4 monthly-plan text-center">Good</td>
+                    <td class="px-4 py-4 monthly-plan text-center">Better</td>
+                    <td class="px-4 py-4 monthly-plan text-center">Best</td>
+                </tr>
+                <tr class="content-center border-b border-gray-300">
+                    <td class="px-4 py-4 text-gray-500">Resolution</td>
+                    <td class="px-4 py-4 monthly-plan text-center">480p</td>
+                    <td class="px-4 py-4 monthly-plan text-center">480p</td>
+                    <td class="px-4 py-4 monthly-plan text-center">1080p</td>
+                    <td class="px-4 py-4 monthly-plan text-center">4K+HDR</td>
+                </tr>
+                <tr class="align-top">
+                    <td class="px-4 py-2 text-gray-500">Devices you can use to watch</td>
+                    <td class="px-4 py-2 monthly-plan text-center">Phone<br>Tablet</td>
+                    <td class="px-4 py-2 monthly-plan text-center">Phone<br>Tablet<br>Computer<br>TV</td>
+                    <td class="px-4 py-2 monthly-plan text-center">Phone<br>Tablet<br>Computer<br>TV</td>
+                    <td class="px-4 py-2 monthly-plan text-center">Phone<br>Tablet<br>Computer<br>TV</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const monthlyBtn = document.getElementById('monthly-btn');
+        const yearlyBtn = document.getElementById('yearly-btn');
+        const mobileBtn = document.getElementById('mobile-btn');
+        const basicBtn = document.getElementById('basic-btn');
+        const standardBtn = document.getElementById('standard-btn');
+        const premiumBtn = document.getElementById('premium-btn');
+        
+        monthlyBtn.addEventListener('click', () => {
+            monthlyBtn.style.backgroundColor = '#fff';
+            monthlyBtn.style.color = '#1F4D91';
+            monthlyBtn.style.fontWeight = 'bold';
+            yearlyBtn.style.color = '#fff';
+            yearlyBtn.style.backgroundColor = '#1F4D91';
+            yearlyBtn.style.fontWeight = null;
+        });
+
+        yearlyBtn.addEventListener('click', () => {
+            yearlyBtn.style.backgroundColor = '#fff';
+            yearlyBtn.style.color = '#1F4D91';
+            yearlyBtn.style.fontWeight = 'bold';
+            monthlyBtn.style.color = '#fff';
+            monthlyBtn.style.backgroundColor = '#1F4D91';
+            monthlyBtn.style.fontWeight = null;
+        });
+        
+         function resetPlanButtons() {
+            const planButtons = [mobileBtn, basicBtn, standardBtn, premiumBtn];
+            planButtons.forEach(button => {
+                button.style.backgroundColor = 'cornflowerblue';
+//                button.classList.remove('active-btn-triangle');
+            });
+        }
+        
+           function setButtonStyles(button, triangle) {
+            resetPlanButtons();
+            button.style.backgroundColor = '#1F4D91';
+//            button.classList.add('active-btn-triangle');   
+            triangle.style.borderColor = 'transparent transparent #1F4D91';
+        }
+
+        mobileBtn.addEventListener('click', () => {
+            setButtonStyles(mobileBtn, mobileBtn.querySelector('.btn-triangle'));
+        });
+
+        basicBtn.addEventListener('click', () => {
+            setButtonStyles(basicBtn, basicBtn.querySelector('.btn-triangle'));
+        });
+
+        standardBtn.addEventListener('click', () => {
+            setButtonStyles(standardBtn, standardBtn.querySelector('.btn-triangle'));
+        });
+
+        premiumBtn.addEventListener('click', () => {
+            setButtonStyles(premiumBtn, premiumBtn.querySelector('.btn-triangle'));
+        });
+        
+        mobileBtn.click();
+        monthlyBtn.click();
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Account</title>
+  <!-- Include Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1F4D91;
+        width: 100%;
+    }
+    .cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+    }
+    .form-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .btn{
+      background-color: #1F4D90;          
+    } 
+  </style>
+</head>
+<body>
+  <div class="cont">
+    <div class="form-box font-sans">
+      <h2 class="text-xl font-bold mb-4 text-center">Login to your account</h2>
+      <form id="loginAccountForm">
+        <div class="mb-4">
+          <label for="email" class="block text-base font-semibold">Email</label>
+          <input type="email" id="email" name="email" class="w-full px-3 py-2 border-2 rounded border-gray" required>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-base font-semibold">Password</label>
+          <input type="password" id="password" name="password" class="w-full px-3 py-2 border-2 rounded border-gray" required>
+        </div>
+        <div class="mb-8">
+          <label class="flex items-center text-sm font-semibold">
+            <input type="checkbox" class="mr-2">
+            Remember me
+          </label>
+        </div>
+        <div class="btn text-center rounded-md hover:bg-blue-600">
+          <button type="submit" class="text-white font-bold px-4 py-2">Login</button>
+        </div>
+        <p class="text-center text-sm mt-6">
+              New to MyApp? <a href="index.html" class="text-blue-600 font-semibold">Sign Up</a>
+        </p>  
+      </form>
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+</html>
